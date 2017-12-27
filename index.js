@@ -1,16 +1,16 @@
-import shortid from 'shortid';
+var shortid = require('shortid');
 
-export default (options) => {
+module.exports = (options) => {
 
-  const header = options['header'] ? options['header'] : 'eaglr-flow-id';
-  const prefix = options['prefix'] ? options['prefix'] : 'eaglr-';
+  const header = options && options['header'] ? options['header'] : 'eaglr-flow-id';
+  const prefix = options && options['prefix'] ? options['prefix'] : 'eaglr-';
 
   return (req, res, next) => {
 
     if (!req.headers[header]) {
       var eaglrHeader = prefix + shortid.generate();
       req.headers[header] = eaglrHeader;
-      res.headers[header] = eaglrHeader;
+      res.set(header, eaglrHeader);
     }
 
     next()

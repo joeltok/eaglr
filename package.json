@@ -4,7 +4,7 @@
   "description": "Track flows through a distributed microservices architecture.",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "test": "mocha test/index.js"
   },
   "repository": {
     "type": "git",
@@ -30,6 +30,9 @@
   },
   "devDependencies": {
     "assert": "^1.4.1",
-    "mocha": "^4.0.1"
+    "express": "^4.16.2",
+    "mocha": "^4.0.1",
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2"
   }
 }
