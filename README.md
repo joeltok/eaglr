@@ -5,7 +5,7 @@ Track flows through a distributed microservices architecture.
 ## How to install
 
 ```bash
-npm install --save eagleid
+npm install --save eaglr
 ```
 
 ## How to use
@@ -13,9 +13,9 @@ npm install --save eagleid
 1. Append as middleware to server
 
 ```javascript
-import EagleId from 'eagleid'
+import Eaglr from 'eaglr'
 
-app.use(EagleId());
+app.use(Eaglr());
 ```
 
 2. In business logic.
@@ -23,12 +23,12 @@ app.use(EagleId());
 ```javascript
 import rp from 'request-promise';
 
-var eagleFlowId = req.headers['eagle-flow-id'];
+var eaglrFlowId = req.headers['eaglr-flow-id'];
 rp({
   method: ...,
   headers: {
     ...,
-    'eagle-flow-id': eagleFlowId
+    'eaglr-flow-id': eagleFlowId
   }
 })
 ```
@@ -36,7 +36,7 @@ rp({
 3. Use your logger to record the eagle flow id at various parts of your application
 
 ```javascript
-console.log(req.headers['eagle-flow-id'])
+console.log(req.headers['eaglr-flow-id'])
 ```
 
 ## Description
