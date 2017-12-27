@@ -13,7 +13,10 @@ npm install --save eaglr
 1. Append as middleware to server
 
 ```javascript
-import Eaglr from 'eaglr'
+var Eaglr = require('eaglr');
+var express = require('express');
+
+var app = express();
 
 app.use(Eaglr());
 ```
@@ -23,7 +26,7 @@ This will (1) check for an `eaglr-token` header in each incoming request, and (2
 2. Pass on `ealgr-token` header to subsequent calls to other APIs
 
 ```javascript
-import rp from 'request-promise';
+var rp = require('request-promise');
 
 var eaglrToken = req.headers['eaglr-token'];
 rp({
@@ -41,7 +44,7 @@ rp({
 console.log(req.headers['eaglr-token'])
 ```
 
-Two keys areas to record these are at the points of incoming and outgoing http requests.
+Two critical areas to record these are at the points of incoming and outgoing http requests.
 
 ## Description
 
@@ -54,9 +57,16 @@ This main aim of this utility is to embed a token into the headers of requests t
 - Log the incoming req.headers in all microservices to capture the eaglr token. This includes the start of each flow, after the eaglr-token has been created.
 - Include a datetime stamp with all logs that is synced between microservices - to ensure better trace accuracy.
 
-## Testing
+## Options
 
-`npm test`
+Eaglr is also able to accept options (optional) on initialization:
+
+```javascript
+app.use(Eaglr({
+  header: ..., // tracing header instead of the default 'eaglr-token'
+  prefix: ...  // token prefix instead of the default 'eaglr'
+}))
+```
 
 ## TODO
 
