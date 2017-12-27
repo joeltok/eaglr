@@ -23,12 +23,12 @@ app.use(Eaglr());
 ```javascript
 import rp from 'request-promise';
 
-var eaglrFlowId = req.headers['eaglr-flow-id'];
+var eaglrFlowId = req.headers['eaglr-token'];
 rp({
   method: ...,
   headers: {
     ...,
-    'eaglr-flow-id': eagleFlowId
+    'eaglr-token': eagleFlowId
   }
 })
 ```
@@ -36,7 +36,5 @@ rp({
 3. Use your logger to record the eagle flow id at various parts of your application
 
 ```javascript
-console.log(req.headers['eaglr-flow-id'])
+console.log(req.headers['eaglr-token'])
 ```
-
-## Description

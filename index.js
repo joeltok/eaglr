@@ -2,7 +2,7 @@ var shortid = require('shortid');
 
 module.exports = (options) => {
 
-  const header = options && options['header'] ? options['header'] : 'eaglr-flow-id';
+  const header = options && options['header'] ? options['header'] : 'eaglr-token';
   const prefix = options && options['prefix'] ? options['prefix'] : 'eaglr-';
 
   return (req, res, next) => {
