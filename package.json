@@ -1,0 +1,35 @@
+{
+  "name": "eaglr",
+  "version": "1.0.0",
+  "description": "Track flows through a distributed microservices architecture.",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joeltok/eaglr.git"
+  },
+  "keywords": [
+    "microservice",
+    "microservices",
+    "distributed",
+    "architecture",
+    "trace",
+    "track",
+    "flow"
+  ],
+  "author": "joeltok",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/joeltok/eaglr/issues"
+  },
+  "homepage": "https://github.com/joeltok/eaglr#readme",
+  "dependencies": {
+    "shortid": "^2.2.8"
+  },
+  "devDependencies": {
+    "assert": "^1.4.1",
+    "mocha": "^4.0.1"
+  }
+}
