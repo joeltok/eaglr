@@ -6,7 +6,8 @@
   "scripts": {
     "test": "mocha test/index.js",
     "lint": "eslint --ignore-path .gitignore .",
-    "lint:fix": "eslint --fix --ignore-path .gitignore ."
+    "lint:fix": "eslint --fix --ignore-path .gitignore .",
+    "cover": "istanbul cover ./node_modules/mocha/bin/_mocha -- -R spec"
   },
   "repository": {
     "type": "git",
@@ -19,7 +20,8 @@
     "architecture",
     "trace",
     "track",
-    "flow"
+    "flow",
+    "flows"
   ],
   "author": "joeltok",
   "license": "MIT",

@@ -161,5 +161,4 @@ describe('Test that if second app has a different custom header, it will create 
 		assert.equal(!!container.app2Req.headers['custom-header'], true);
 		done();
 	});
-
 });

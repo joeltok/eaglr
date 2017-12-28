@@ -73,3 +73,4 @@ app.use(Eaglr({
 - Add microservice step number (number of microservices traversed before the current microservice)
 - Custom request promise encapsulation that automatically adds the eaglr-token
 - Add appName to options, which complements step number and allows identification of the service that the flow enters
+- req.eaglr as a convenience accessor
